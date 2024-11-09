@@ -1,0 +1,93 @@
+Bash
+
+#!/bin/bash
+
+# Specify the directory to search
+directory="/path/to/your/directory"
+
+# Calculate the number of days in 6 months
+days_in_6_months=180
+
+# Find and delete files older than 6 months
+find "$directory" -mtime +$days_in_6_months -type f -delete
+
+Gunakan kode dengan hati-hati.
+
+Explanation:
+
+    Specify the directory: Replace /path/to/your/directory with the actual path to the directory you want to clean.
+    Calculate days: We calculate the number of days in 6 months (180 days) and store it in the days_in_6_months variable.
+    Find and delete:
+        find "$directory": Starts searching from the specified directory.
+        -mtime +$days_in_6_months: Finds files modified more than 180 days ago.
+        -type f: Ensures only files are considered.
+        -delete: Deletes the found files.
+
+How to use:
+
+    Save the script: Save the script as a .sh file (e.g., delete_old_files.sh).
+    Make it executable:
+    Bash
+
+    chmod +x delete_old_files.sh
+
+    Gunakan kode dengan hati-hati.
+
+Run the script:
+Bash
+
+./delete_old_files.sh
+
+Gunakan kode dengan hati-hati.
+
+Additional Considerations:
+
+    Dry run: To test the script without deleting files, replace -delete with -print:
+    Bash
+
+    find "$directory" -mtime +$days_in_6_months -type f -print
+
+    Gunakan kode dengan hati-hati.
+
+    Scheduling: Use a cron job to automate the script's execution:
+
+    0 0 1 * * /path/to/your/script/delete_old_files.sh
+
+    This will run the script at midnight on the 1st of every month.
+    Caution: Be careful when using -delete as it permanently removes files. Always test the script with -print first.
+
+By following these steps and considering the additional tips, you can effectively manage your disk space and automatically remove old files.
+gambar profil
+
+bash curret path
+
+To get the current working directory in Bash, you can use the pwd command or the $PWD variable.
+
+Using the pwd command:
+
+    Open your terminal or command prompt.
+    Type pwd and press Enter.
+
+This will print the absolute path of your current directory to the console.  
+
+Using the $PWD variable:
+
+    Open your terminal or command prompt.
+    Type echo $PWD and press Enter.
+
+This will also print the absolute path of your current directory to the console.
+
+Example:
+
+If your current directory is /home/user/Documents, both commands will output:
+
+/home/user/Documents
+
+You can also use the $PWD variable within scripts to reference the current directory. For example, to create a file in the current directory, you could use:
+Bash
+
+touch "$PWD/new_file.txt"
+
+Gunakan kode dengan hati-hati.
+
+This will create a file named new_file.txt in your current directory.
